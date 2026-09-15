@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 GameGlass Inc -->
+<component type="desktop-application">
+  <id>gg.gameglass.hub</id>
+
+  <name>GameGlass Hub</name>
+  <summary>Turn your phone or tablet into game controls</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://gameglass.gg/legal/terms-of-service</project_license>
+
+  <developer id="gg.gameglass">
+    <name>GameGlass Inc</name>
+  </developer>
+
+  <description>
+    <p>
+      GameGlass Hub is the desktop companion for GameGlass. It pairs your phone
+      or tablet with your PC and turns it into a second screen of touch controls
+      for the games you play, so keybinds you would otherwise hunt for on the
+      keyboard become buttons, dials and switches under your thumb.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Connect a phone or tablet to your PC over your local network and use it as a live control surface</li>
+      <li>Browse and install ready-made control sets, called Shards, for supported games</li>
+      <li>Build your own controls with Forge, a visual no-code editor</li>
+      <li>Manage your GameGlass library and keep installed Shards up to date</li>
+      <li>Send keystrokes, macros and virtual gamepad input to any game running on the PC</li>
+    </ul>
+    <p>
+      A free GameGlass account is required. Some Shards are free and others are
+      sold individually or through a subscription; pricing is shown in the app
+      before purchase.
+    </p>
+    <p>
+      One-time setup: sending input to your games needs write access to
+      <code>/dev/uinput</code>, which is granted by a udev rule on the host. A
+      Flatpak cannot install that itself. If you already have Steam installed
+      you almost certainly have it already; otherwise the Hub will tell you when
+      input is unavailable, and the rule it needs is shipped inside this Flatpak
+      at <code>share/gg.gameglass.hub/udev/60-gameglass-input.rules</code> along
+      with instructions for copying it to <code>/etc/udev/rules.d</code>.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">gg.gameglass.hub.desktop</launchable>
+
+  <url type="homepage">https://gameglass.gg</url>
+  <url type="help">https://support.gameglass.gg</url>
+  <url type="contact">https://gameglass.gg/contact</url>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f05a28</color>
+    <color type="primary" scheme_preference="dark">#1b1b23</color>
+  </branding>
+
+  <!-- TODO: upload these before submitting. They must be publicly reachable
+       PNG or JPEG over HTTPS; Flathub mirrors them at build time. -->
+  <screenshots>
+    <screenshot type="default">
+      <image>https://download.gameglass.gg/hub/flathub/screenshot-library.png</image>
+      <caption>Browsing the Shard library</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://download.gameglass.gg/hub/flathub/screenshot-forge.png</image>
+      <caption>Designing a control layout in Forge</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://download.gameglass.gg/hub/flathub/screenshot-device.png</image>
+      <caption>Pairing a phone or tablet with the Hub</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+
+  <releases>
+    <release version="8.2.1" date="2026-09-10">
+      <url type="details">https://support.gameglass.gg</url>
+      <description>
+        <p>Maintenance release.</p>
+        <ul>
+          <li>Fixed a window staying minimised when the bound window was maximised</li>
+          <li>Logging fixes</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
