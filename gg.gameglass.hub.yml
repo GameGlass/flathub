@@ -8,10 +8,10 @@
 # add a <release> entry to gg.gameglass.hub.metainfo.xml.
 id: gg.gameglass.hub
 runtime: org.freedesktop.Platform
-runtime-version: '26.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '26.08'
+base-version: '25.08'
 command: gameglass-hub
 separate-locales: false
 
@@ -121,5 +121,3 @@ modules:
         path: gg.gameglass.hub.metainfo.xml
       - type: file
         path: LICENSE.txt
-      - type: file
-        path: 60-gameglass-input.rules
