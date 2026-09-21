@@ -18,7 +18,7 @@
       GameGlass Hub is the desktop companion for GameGlass. It pairs your phone
       or tablet with your PC and turns it into a second screen of touch controls
       for the games you play, so keybinds you would otherwise hunt for on the
-      keyboard become buttons, dials and switches under your thumb.
+      keyboard become buttons, dials and switches under your hand.
     </p>
     <p>Features:</p>
     <ul>
@@ -29,18 +29,15 @@
       <li>Send keystrokes, macros and virtual gamepad input to any game running on the PC</li>
     </ul>
     <p>
-      A free GameGlass account is required. Some Shards are free and others are
-      sold individually or through a subscription; pricing is shown in the app
-      before purchase.
+      A free GameGlass account is required. Some Shards are free and others are available
+      through a subscription.
     </p>
     <p>
       One-time setup: sending input to your games needs write access to
       <code>/dev/uinput</code>, which is granted by a udev rule on the host. A
       Flatpak cannot install that itself. If you already have Steam installed
       you almost certainly have it already; otherwise the Hub will tell you when
-      input is unavailable, and the rule it needs is shipped inside this Flatpak
-      at <code>share/gg.gameglass.hub/udev/60-gameglass-input.rules</code> along
-      with instructions for copying it to <code>/etc/udev/rules.d</code>.
+      input is unavailable and how to install the required rule.
     </p>
   </description>
 
