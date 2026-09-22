@@ -13,17 +13,14 @@ command: gameglass-hub
 separate-locales: false
 
 finish-args:
-  # Wayland first, X11 as fallback. Flathub rejects x11 + wayland together.
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
   - --device=all
   - --share=network
   - --socket=pulseaudio
-  # Screenshots are written to ~/Pictures/GameGlass, plugin/overlay downloads to ~/Downloads.
   - --filesystem=xdg-pictures/GameGlass:create
   - --filesystem=xdg-download
-  # Tray icon + desktop notifications.
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.AppMenu.Registrar
@@ -38,11 +35,6 @@ cleanup:
   - '*.la'
 
 modules:
-  # ---------------------------------------------------------------------------
-  # libinput stack. The freedesktop runtime does not ship libinput, but
-  # @gameglass/native-keymap links against libinput.so.10. Each module below is
-  # a build dependency of the next, so the order matters.
-  # ---------------------------------------------------------------------------
   - name: mtdev
     buildsystem: autotools
     sources:
@@ -70,9 +62,6 @@ modules:
         url: https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.27.1/libinput-1.27.1.tar.gz
         sha256: f6d623dd8230db337a6457645ebca96b9d4788a56385463bb14b8174910dfe23
 
-  # ---------------------------------------------------------------------------
-  # The application itself, unpacked from the official .deb.
-  # ---------------------------------------------------------------------------
   - name: gameglass-hub
     buildsystem: simple
     build-commands:
@@ -86,7 +75,6 @@ modules:
 
       - install -Dm755 gameglass-hub.sh /app/bin/gameglass-hub
 
-      # Desktop entry and AppStream metadata come from the .deb
       - install -Dm644 usr/share/applications/@gameglasshub.desktop /app/share/applications/gg.gameglass.hub.desktop
       - desktop-file-edit --set-key=Exec --set-value='gameglass-hub %U' --set-icon=gg.gameglass.hub /app/share/applications/gg.gameglass.hub.desktop
       - install -Dm644 usr/share/metainfo/gg.gameglass.hub.metainfo.xml /app/share/metainfo/gg.gameglass.hub.metainfo.xml
