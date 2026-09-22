@@ -1,11 +1,8 @@
 # GameGlass Hub - Flathub manifest
 #
 # This does NOT build the app from source. It repackages the official prebuilt
-# Linux release (the .deb produced by `pnpm release:linux`) that GameGlass
-# publishes to https://download.gameglass.gg/hub/.
+# Linux release that is published to https://download.gameglass.gg/hub/.
 #
-# When a new version ships, run ./update-manifest.sh to refresh the sha256 and
-# add a <release> entry to gg.gameglass.hub.metainfo.xml.
 id: gg.gameglass.hub
 runtime: org.freedesktop.Platform
 runtime-version: '25.08'
@@ -84,13 +81,15 @@ modules:
 
       - mkdir -p /app/gameglass-hub
       - cp -a "opt/GameGlass Hub/." /app/gameglass-hub/
-      # zypak provides the sandbox inside Flatpak; the setuid helper cannot work here.
       - rm -f /app/gameglass-hub/chrome-sandbox
       - mv "/app/gameglass-hub/@gameglasshub" /app/gameglass-hub/gameglass-hub
 
       - install -Dm755 gameglass-hub.sh /app/bin/gameglass-hub
-      - install -Dm644 gg.gameglass.hub.desktop /app/share/applications/gg.gameglass.hub.desktop
-      - install -Dm644 gg.gameglass.hub.metainfo.xml /app/share/metainfo/gg.gameglass.hub.metainfo.xml
+
+      # Desktop entry and AppStream metadata come from the .deb
+      - install -Dm644 usr/share/applications/@gameglasshub.desktop /app/share/applications/gg.gameglass.hub.desktop
+      - desktop-file-edit --set-key=Exec --set-value='gameglass-hub %U' --set-icon=gg.gameglass.hub /app/share/applications/gg.gameglass.hub.desktop
+      - install -Dm644 usr/share/metainfo/gg.gameglass.hub.metainfo.xml /app/share/metainfo/gg.gameglass.hub.metainfo.xml
 
       - |
         for size in 16 32 48 64 128 256 512; do
@@ -101,23 +100,12 @@ modules:
       - install -Dm644 /app/gameglass-hub/LICENSE.electron.txt /app/share/licenses/gg.gameglass.hub/LICENSE.electron.txt
       - install -Dm644 /app/gameglass-hub/LICENSES.chromium.html /app/share/licenses/gg.gameglass.hub/LICENSES.chromium.html
       - install -Dm644 LICENSE.txt /app/share/licenses/gg.gameglass.hub/LICENSE.txt
-
-      # A Flatpak cannot install a udev rule on the host, so ship it where the
-      # user can copy it out. See README.md and the metainfo description.
-      - install -Dm644 60-gameglass-input.rules /app/share/gg.gameglass.hub/udev/60-gameglass-input.rules
     sources:
-      # TODO: point this at a version-pinned URL (e.g. .../hub/8.2.1/GameGlass.deb).
-      # This rolling URL changes content on every release, which breaks any rebuild
-      # of this manifest as soon as a new version is published.
       - type: file
         url: https://download.gameglass.gg/hub/GameGlass.deb
         sha256: be7d2d885b0e89c48bdb8a94e49fcdc50203a75ed835ba3d420ecbca6ab9768b
         dest-filename: GameGlass.deb
       - type: file
         path: gameglass-hub.sh
-      - type: file
-        path: gg.gameglass.hub.desktop
-      - type: file
-        path: gg.gameglass.hub.metainfo.xml
       - type: file
         path: LICENSE.txt
