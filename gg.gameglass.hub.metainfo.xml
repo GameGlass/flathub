@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 GameGlass Inc -->
+<component type="desktop-application">
+  <id>gg.gameglass.hub</id>
+
+  <name>GameGlass Hub</name>
+  <summary>Immersive touch experiences for the games you love</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>LicenseRef-proprietary=https://gameglass.gg/legal/terms-of-service</project_license>
+
+  <developer id="gg.gameglass">
+    <name>GameGlass Inc</name>
+  </developer>
+
+  <description>
+    <p>
+      GameGlass Hub is the desktop companion for GameGlass. It pairs your phone
+      or tablet with your PC and turns it into a second screen of touch controls
+      for the games you play, so keybinds you would otherwise hunt for on the
+      keyboard become buttons, dials and switches under your hand.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Connect a phone or tablet to your PC over your local network and use it as a live control surface</li>
+      <li>Browse and install ready-made control sets, called Shards, for supported games</li>
+      <li>Build your own controls with Forge, a visual no-code editor</li>
+      <li>Send keystrokes, macros and virtual gamepad input to any game running on the PC</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">gg.gameglass.hub.desktop</launchable>
+
+  <url type="homepage">https://gameglass.gg</url>
+  <url type="help">https://support.gameglass.gg</url>
+  <url type="contact">https://gameglass.gg/contact</url>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#A3A3A3</color>
+    <color type="primary" scheme_preference="dark">#2A2E3A</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://download.gameglass.gg/hub/flathub/screenshot-library.png</image>
+      <caption>Browsing the Shard library</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://download.gameglass.gg/hub/flathub/screenshot-forge.png</image>
+      <caption>Designing a control layout in Forge</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://download.gameglass.gg/hub/flathub/screenshot-device.png</image>
+      <caption>Pairing a phone or tablet with the Hub</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+
+  <releases>
+    <release version="8.2.2" date="2026-09-16">
+      <url type="details">https://support.gameglass.gg</url>
+    </release>
+  </releases>
+</component>
