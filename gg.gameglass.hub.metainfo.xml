@@ -15,17 +15,15 @@
 
   <description>
     <p>
-      GameGlass Hub is the desktop companion for GameGlass. It pairs your phone
-      or tablet with your PC and turns it into a second screen of touch controls
-      for the games you play, so keybinds you would otherwise hunt for on the
-      keyboard become buttons, dials and switches under your hand.
+      GameGlass Hub is the desktop companion for GameGlass. It connects your phone or tablet with your PC, and turns them into touch-screen controllers for your games and apps. Download controls made by the community, or create your own from a huge range of components. Easily add labels and actions to create immersive and intuitive new ways to play.
     </p>
     <p>Features:</p>
     <ul>
       <li>Connect a phone or tablet to your PC over your local network and use it as a live control surface</li>
-      <li>Browse and install ready-made control sets, called Shards, for supported games</li>
-      <li>Build your own controls with Forge, a visual no-code editor</li>
-      <li>Send keystrokes, macros and virtual gamepad input to any game running on the PC</li>
+      <li>Browse and install ready-made control panels</li>
+      <li>Build your own control panels, with a no-code, drag &amp; drop editor and tons of buttons, switches, and other components</li>
+      <li>Send keystrokes, macros and virtual gamepad input to any game or app running on the PC</li>
+      <li>Display game and PC system telemetry</li>
     </ul>
   </description>
 
@@ -42,16 +40,32 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://download.gameglass.gg/hub/flathub/screenshot-library.png</image>
-      <caption>Browsing the Shard library</caption>
+      <image>https://github.com/GameGlass/flathub/blob/39ef9fc054b2776bb4519395541bb19957bd0afb/home.png</image>
+      <caption>The Hub dashboard with news and featured content</caption>
     </screenshot>
     <screenshot>
-      <image>https://download.gameglass.gg/hub/flathub/screenshot-forge.png</image>
-      <caption>Designing a control layout in Forge</caption>
+      <image>https://github.com/GameGlass/flathub/blob/39ef9fc054b2776bb4519395541bb19957bd0afb/explore.png</image>
+      <caption>Browsing the library of customized control panels</caption>
     </screenshot>
     <screenshot>
-      <image>https://download.gameglass.gg/hub/flathub/screenshot-device.png</image>
-      <caption>Pairing a phone or tablet with the Hub</caption>
+      <image>https://github.com/GameGlass/flathub/blob/39ef9fc054b2776bb4519395541bb19957bd0afb/explore.png</image>
+      <caption>Browse shared and premium control panels</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/GameGlass/flathub/blob/39ef9fc054b2776bb4519395541bb19957bd0afb/plugins.png</image>
+      <caption>plugins to provide game telemetry and system data into your control panel</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/GameGlass/flathub/blob/39ef9fc054b2776bb4519395541bb19957bd0afb/forge.png</image>
+      <caption>The editor where you can create and edit control panels</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/GameGlass/flathub/blob/39ef9fc054b2776bb4519395541bb19957bd0afb/forge_components.png</image>
+      <caption>Add a wide range of components, buttons, panels, decorations, dials and sliders to your panel</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/GameGlass/flathub/blob/39ef9fc054b2776bb4519395541bb19957bd0afb/forge_actions.png</image>
+      <caption>Add input, sound and state actions to your components</caption>
     </screenshot>
   </screenshots>
 
