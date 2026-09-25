@@ -77,7 +77,6 @@ modules:
 
       - install -Dm644 usr/share/applications/@gameglasshub.desktop /app/share/applications/gg.gameglass.hub.desktop
       - desktop-file-edit --set-key=Exec --set-value='gameglass-hub %U' --set-icon=gg.gameglass.hub /app/share/applications/gg.gameglass.hub.desktop
-      - install -Dm644 usr/share/metainfo/gg.gameglass.hub.metainfo.xml /app/share/metainfo/gg.gameglass.hub.metainfo.xml
 
       - |
         for size in 16 32 48 64 128 256 512; do
