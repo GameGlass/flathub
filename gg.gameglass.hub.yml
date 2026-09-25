@@ -87,6 +87,7 @@ modules:
       - install -Dm644 /app/gameglass-hub/LICENSE.electron.txt /app/share/licenses/gg.gameglass.hub/LICENSE.electron.txt
       - install -Dm644 /app/gameglass-hub/LICENSES.chromium.html /app/share/licenses/gg.gameglass.hub/LICENSES.chromium.html
       - install -Dm644 LICENSE.txt /app/share/licenses/gg.gameglass.hub/LICENSE.txt
+      - install -Dm644 gg.gameglass.hub.metainfo.xml /app/share/metainfo/gg.gameglass.hub.metainfo.xml
     sources:
       - type: file
         url: https://download.gameglass.gg/hub/GameGlass.deb
