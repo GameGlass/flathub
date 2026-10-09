@@ -21,7 +21,6 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=xdg-pictures/GameGlass:create
   - --talk-name=org.freedesktop.Notifications
-  - --talk-name=org.freedesktop.portal.Desktop
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.AppMenu.Registrar
 
