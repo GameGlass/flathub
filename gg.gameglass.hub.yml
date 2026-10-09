@@ -19,7 +19,7 @@ finish-args:
   - --device=all
   - --share=network
   - --socket=pulseaudio
-  - --filesystem=xdg-pictures/GameGlass:create
+  - --filesystem=xdg-pictures:create
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.AppMenu.Registrar
